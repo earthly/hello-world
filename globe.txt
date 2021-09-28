@@ -27,7 +27,7 @@ H8888888Ho                 `888888888T       .
    :988k                    `888#"        -       To get started, please visit
      &8}                     `          .-        https://docs.earthly.dev
       `&.                             .
-        `~,   .                     ./
-            . _                  .-
+        `~,   .                     ./            Join our Slack community
+            . _                  .-               https://earthly.dev/slack
               "`--._,dd###pp="""
 
