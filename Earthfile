@@ -6,6 +6,10 @@ hello:
     COPY globe.txt ./
     RUN cat globe.txt
 
+hello-name:
+    ARG name=world
+    RUN echo "Hello, $name!"
+
 hello-outputs:
     ARG name=world
     RUN echo "Hello, $name!" > /hello-outputs.txt
