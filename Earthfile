@@ -3,16 +3,17 @@ VERSION 0.7
 FROM busybox:1.32.0
 
 hello:
-    COPY globe.txt ./
-    RUN cat globe.txt
-
-hello-name:
     ARG name=world
-    RUN echo "Hello, $name!"
+    COPY globe.txt /globe.txt
+    RUN cat /globe.txt
+    RUN echo "Hello, $name!" > /hello.txt
+    CMD ["cat", "/hello.txt"]
+    SAVE ARTIFACT /hello.txt AS LOCAL hello.txt
+    SAVE IMAGE hello:latest
 
-hello-outputs:
-    ARG name=world
-    RUN echo "Hello, $name!" > /hello-outputs.txt
-    CMD ["cat", "/hello-outputs.txt"]
-    SAVE ARTIFACT /hello-outputs.txt AS LOCAL hello-outputs.txt
-    SAVE IMAGE hello-outputs:latest
+hello-slow:
+    BUILD +hello
+    RUN sleep 3
+    RUN echo "Running slow operation. This will take 20 seconds..."
+    RUN sleep 20
+    RUN echo "...done!"

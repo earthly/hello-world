@@ -32,14 +32,15 @@ H8888888Ho                 `888888888T       .
               "`--._,dd###pp="""
 
 
-
-Hello World!
-
 Your 🌍 Earthly installation is working correctly ✨
 
-To get started, please visit
-https://docs.earthly.dev
+This example build produces two outputs:
 
-Join our Slack community
-https://earthly.dev/slack
+* hello.txt, a regular text file
+* hello:latest, a container image
+
+You can verify these outputs by running:
+
+  cat hello.txt
+  docker run --rm hello:latest
 
