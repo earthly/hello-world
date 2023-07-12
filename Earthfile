@@ -17,3 +17,4 @@ hello-slow:
     RUN echo "Running slow operation. This will take 20 seconds..."
     RUN sleep 20
     RUN echo "...done!"
+    RUN echo "Running this target again will skip these steps."
